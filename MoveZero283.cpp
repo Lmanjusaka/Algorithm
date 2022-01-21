@@ -5,6 +5,7 @@
 #include <iostream>
 #include "vector"
 using namespace std;
+/* 优化前
 class Solution{
 public:
     void moveZeroes(vector<int> &nums) {
@@ -14,6 +15,17 @@ public:
                 nums[j++] = nums[i];
         while(j < nums.size())
             nums[j++] = 0;
+    }
+};
+*/
+
+class Solution{
+public:
+    void moveZeroes(vector<int> &nums) {
+        int j = 0;
+        for(int i = 0; i < nums.size(); i++)
+            if(nums[i] != 0 && j != i)
+                swap(nums[j++],nums[i]);
     }
 };
 

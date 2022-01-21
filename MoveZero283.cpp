@@ -24,8 +24,13 @@ public:
     void moveZeroes(vector<int> &nums) {
         int j = 0;
         for(int i = 0; i < nums.size(); i++)
-            if(nums[i] != 0 && j != i)
-                swap(nums[j++],nums[i]);
+            if(nums[i] ){
+                if(i != j)
+                    swap(nums[j++],nums[i]);
+                else
+                    j++;
+            }
+
     }
 };
 

@@ -16,6 +16,7 @@ public:
                 return res;
             }
             table[nums[i]] = i;
+
         }
     }
 
@@ -25,7 +26,12 @@ int main(){
     vector<int> nums = { 2, 7 , 11 , 15};
     vector<int> res;
     res = Solution().twoSum(nums, 9);
-    for (int a : res) {
-        cout<<a<<',';
+    cout<<'[';
+    for (int i = 0; i < res.size(); ++i) {
+        if(i != res.size() - 1)
+            cout<<res[i]<<',';
+        else
+            cout<<res[i];
     }
+    cout<<']';
 }
